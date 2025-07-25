@@ -19,7 +19,7 @@ class loginModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    private function obtenerUsuarioPorEmail($email)
+    public function obtenerUsuarioPorEmail($email)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM usuarios WHERE correo = :correo LIMIT 1");
         $stmt->execute(['correo' => $email]);
@@ -36,7 +36,7 @@ class loginModel
         ]);
     }
 
-    private function obtenerUsuarioPorToken($token)
+    public function obtenerUsuarioPorToken($token)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM usuarios WHERE token = :token LIMIT 1");
         $stmt->execute(['token' => $token]);
@@ -52,7 +52,7 @@ class loginModel
         ]);
     }
 
-    private function limpiarToken($id)
+    public function limpiarToken($id)
     {
         $stmt = $this->pdo->prepare("UPDATE usuarios SET token = NULL, token_expiration = NULL WHERE id = :id");
         $stmt->execute(['id' => $id]);
@@ -80,8 +80,7 @@ class loginModel
             return false; // Token inválido o expirado
         }
 
-        $hashedPassword = password_hash($nuevaContraseña, PASSWORD_DEFAULT);
-        $this->actualizarContraseña($usuario['id'], $hashedPassword);
+        $this->actualizarContraseña($usuario['id'], $nuevaContraseña); 
         $this->limpiarToken($usuario['id']);
 
         return true;

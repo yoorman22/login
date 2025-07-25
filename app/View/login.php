@@ -18,6 +18,18 @@
         <h2 class="login-title">Iniciar Sesión</h2>
         <h5 class="login-subtitle">Coloca tus credenciales de usuario</h5>
 
+        <!-- Mensajes de éxito/error desde sesión -->
+        <?php if (!empty($_SESSION['mensaje'])): ?>
+            <div class="alert alert-<?= $_SESSION['tipo_mensaje'] === 'error' ? 'danger' : 'success' ?> alert-dismissible fade show" role="alert">
+                <?= htmlspecialchars($_SESSION['mensaje']) ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php 
+            unset($_SESSION['mensaje']); 
+            unset($_SESSION['tipo_mensaje']);
+            ?>
+        <?php endif; ?>
+
         <!-- Mensaje de logout desde $mensaje (controlador lo envía) -->
         <?php if (!empty($mensaje)): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -65,9 +77,11 @@
         </form>
 
         <!-- Enlace para recuperar la contraseña -->
-             <p class="recover-card">
-              <a href="RecuperarContraseña.php">¿Olvidaste tu contraseña?</a>
-            </p>
+        <div class="text-center mt-3">
+            <a href="index.php?pagina=recuperarContraseña" class="text-decoration-none">
+                ¿Olvidaste tu contraseña?
+            </a>
+        </div>
     </div>
 
     <?php include_once __DIR__ . '/layouts/scripts.php'; ?>

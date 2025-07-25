@@ -16,5 +16,7 @@
         }
     ],
     "minimum-stability": "beta",
-    "require": {}
+    "require": {
+        "phpmailer/phpmailer": "^6.10"
+    }
 }

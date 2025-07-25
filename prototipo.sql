@@ -96,7 +96,9 @@ CREATE TABLE usuarios (
     correo text NOT NULL,
     usuario VARCHAR(50) UNIQUE,
     contrasena VARCHAR(255),
-    cargo VARCHAR(50)
+    cargo VARCHAR(50),
+    token VARCHAR(255) NULL,
+    token_expiration DATETIME NULL
 );
 
 -- Inserts de datos (7 datos cada tabla, excepto usuarios con 1)
@@ -165,5 +167,5 @@ INSERT INTO orden_de_trabajo (solicitud_id, tecnico_cedula, codigo_herramienta_a
 
 
 -- Insertar usuario de ejemplo (1 registro)
-INSERT INTO usuarios (nombre, usuario, contrasena, cargo)
-VALUES ('Admin', 'admin', '123456', 'tecnico');
+INSERT INTO usuarios (nombre, correo, usuario, contrasena, cargo)
+VALUES ('Admin', 'admin@berilion.com', 'admin', '123456', 'tecnico');
