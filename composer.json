@@ -1,0 +1,20 @@
+{
+    "name": "berilion/sistema",
+    "description": "SISTEMA DE INFORMACIÓN PARA LA GESTIÓN DE SOPORTE TÉCNICO EN LA EMPRESA BERILION",
+    "type": "project",
+    
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    
+    "authors": [
+        {
+            "name": "Berilion",
+            "email": "joaquinmendoza240@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {}
+}

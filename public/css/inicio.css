@@ -1,0 +1,56 @@
+body {
+    background-color: #f8f9fa; /* Un gris muy claro para el fondo */
+    font-family: 'Inter', sans-serif; /* Puedes ajustar esto a la fuente que estés usando */
+}
+.jumbotron-custom {
+    background-color: #e9ecef; /* Un fondo ligeramente más oscuro para el jumbotron */
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.75rem; /* Esquinas redondeadas */
+}
+.jumbotron-custom h1 {
+    color: #343a40; /* Color oscuro para el título */
+    font-weight: 700;
+}
+.jumbotron-custom p {
+    color: #6c757d; /* Color gris para la descripción */
+    font-size: 1.1rem;
+}
+.card-dashboard {
+    background-color: #ffffff;
+    border: none; /* Sin borde */
+    border-radius: 0.75rem; /* Esquinas más redondeadas */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08); /* Sombra suave */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    padding: 1.5rem;
+    text-align: center;
+}
+.card-dashboard:hover {
+    transform: translateY(-0.3rem); /* Pequeño efecto hover */
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.12);
+}
+.dashboard-icon {
+    font-size: 3rem; /* Tamaño grande para los íconos */
+    margin-bottom: 1rem;
+    display: block;
+}
+.dashboard-metric {
+    font-size: 2.5rem; /* Tamaño grande para los números */
+    font-weight: 700; /* Negrita */
+    color: #212529; /* Color oscuro para contraste */
+}
+.dashboard-label {
+    font-size: 1rem;
+    color: #6c757d; /* Gris para las etiquetas */
+    margin-top: 0.5rem;
+}
+.logo-small {
+    max-width: 120px;
+    height: auto;
+    display: block; /* Para centrar con mx-auto en Bootstrap */
+    margin: 0 auto 1.5rem auto; /* Centrar y añadir margen inferior */
+}
+/* Colores para los íconos del dashboard */
+.icon-yellow { color: #ffc107; } 
+.icon-blue { color: #0d6efd; } 
+.icon-green { color: #198754; } 
